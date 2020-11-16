@@ -21,3 +21,21 @@ Install
 ::
 
     pip install .
+
+Testing
+-------
+
+There are three sets of tests:
+
+ - C-tests::
+
+       cd src/ctests && source build_runtests.sh
+       ./runtests
+
+ - npreadtxt test suite::
+
+       pytest .
+
+ - Compatibility with ``np.loadtxt``::
+
+       python compat/check_loadtxt_compat.py -t numpy.lib.tests.test_io::TestLoadTxt
