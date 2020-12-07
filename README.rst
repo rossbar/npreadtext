@@ -15,12 +15,14 @@ numpy testing dependencies, namely ``pytest`` and ``hypothesis``::
 
     pip install -r test_requirements.txt
 
-Install
--------
+Build/Install
+-------------
 
-::
+To see the compiler output while building/installing,
+``python setup.py build_ext -i`` or ``python setup.py install``.
 
-    pip install .
+If you don't want to see compiler output and just want a quick install step
+(e.g. to test changes), ``pip install .``
 
 Testing
 -------
