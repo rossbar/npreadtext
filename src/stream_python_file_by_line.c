@@ -153,10 +153,8 @@ uint32_t _fb_load(void *fb)
  *  buffer pointer.
  *
  *  Returns STREAM_EOF when the end of the file is reached.
- *  XXX The following comments are probably no longer correct... XXX
- *  The sequence '\r\n' is treated as a single '\n'.  That is, when the next
- *  two bytes in the buffer are '\r\n', the buffer pointer is advanced by 2
- *  and '\n' is returned.
+ *  The sequence '\r\n' is treated as a single '\n', and standalone `\r`
+ *  characters are skipped.
  *  When '\n' is returned, fb->line_number is incremented.
  */
 
