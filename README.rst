@@ -18,29 +18,27 @@ numpy testing dependencies, namely ``pytest`` and ``hypothesis``::
 Build/Install
 -------------
 
-To see the compiler output while building/installing,
-``python setup.py build_ext -i`` or ``python setup.py install``.
-
-If you don't want to see compiler output and just want a quick install step
-(e.g. to test changes), ``pip install .``
+Build and install w/ pip: ``pip install -e .``. The ``--verbose`` flag is
+useful for seing build logs: ``pip install -e . --verbose``.
+Full build log also via ``python setup.py build_ext -i``.
 
 Testing
 -------
 
 There are three sets of tests:
 
- - C-tests::
+- C-tests::
 
-       cd src/ctests && source build_runtests.sh
-       ./runtests
+      cd src/ctests && source build_runtest.sh
+      ./runtests
 
- - npreadtxt test suite::
+- npreadtxt test suite::
 
-       pytest .
+      pytest .
 
- - Compatibility with ``np.loadtxt``::
+- Compatibility with ``np.loadtxt``::
 
-       python compat/check_loadtxt_compat.py -t numpy.lib.tests.test_io::TestLoadTxt
+      python compat/check_loadtxt_compat.py -t numpy.lib.tests.test_io::TestLoadTxt
 
 Benchmarking
 ------------
